@@ -353,6 +353,8 @@ function ConstructMessageFromParts(parts) {
                 return emoteImg + bitLabel;
             case "mention":
                 return part.text;
+            case "gif":
+                return `<img src="${EscapeHTML(part.url)}" class="gif">`;
             default:
                 return `<img src="${EscapeHTML(part.imageUrl)}" alt="${EscapeHTML(part.text)}" title="${EscapeHTML(part.text)}" class="emote">`;
         }
